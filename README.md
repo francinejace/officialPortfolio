@@ -110,8 +110,11 @@ officialPortfolio/
 │   └── workflows/
 │       └── blank.yml
 ├── public/
-│   └── images/
-│       └── francine-hero.png
+│   ├── images/
+│   │   └── francine-hero.png
+│   └── projects/
+│       ├── alban-memorial.png
+│       └── solmate.png
 ├── src/
 │   ├── app/
 │   │   ├── about/
