@@ -26,7 +26,7 @@ export function Navbar() {
               href={link.href}
               aria-current={pathname === link.href ? "page" : undefined}
               className={`animated-underline relative inline-flex min-h-11 items-center py-2 transition-colors hover:text-gold-light focus-visible:text-gold-light ${
-                pathname === link.href ? "text-ink after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-gold" : ""
+                pathname === link.href ? "is-active text-ink" : ""
               }`}
             >
               {link.label}

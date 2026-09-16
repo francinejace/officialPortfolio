@@ -63,7 +63,8 @@ a {
 }
 
 .animated-underline:hover::after,
-.animated-underline:focus-visible::after {
+.animated-underline:focus-visible::after,
+.animated-underline.is-active::after {
   transform: scaleX(1);
   transform-origin: left center;
 }
