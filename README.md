@@ -109,6 +109,9 @@ officialPortfolio/
 ├── .github/
 │   └── workflows/
 │       └── blank.yml
+├── public/
+│   └── images/
+│       └── francine-hero.png
 ├── src/
 │   ├── app/
 │   │   ├── about/

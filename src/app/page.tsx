@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
@@ -7,27 +8,41 @@ import { projects } from "@/data/projects";
 export default function Home() {
   return (
     <main id="top">
-      <section className="mx-auto flex min-h-[calc(100vh-9rem)] w-full max-w-6xl flex-col justify-between px-6 py-16 lg:px-8 lg:py-24">
-        <Reveal className="max-w-4xl">
-          <p className="mb-8 text-xs uppercase tracking-[0.28em] text-gold">IT Intern / Software Engineer Aspirant · Marikina City</p>
-          <h1 className="max-w-4xl font-serif text-6xl leading-[0.92] text-ink sm:text-8xl lg:text-[9rem]">
-            Francine Jace
-            <span className="block text-gold">Bachiller</span>
-          </h1>
-          <p className="mt-10 max-w-xl text-base leading-7 text-muted sm:text-lg">
-            I build practical digital experiences that balance technical rigor, thoughtful design, and real-world problem solving.
-          </p>
-        </Reveal>
+      <section className="group relative min-h-[calc(100vh-5rem)] overflow-hidden border-b border-line">
+        <Image
+          src="/images/francine-hero.png"
+          alt="Portrait of Francine Jace Bachiller under a dramatic studio spotlight"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[52%_38%] transition-transform duration-[1400ms] ease-out group-hover:scale-[1.015] motion-reduce:transform-none motion-reduce:transition-none"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-obsidian/20" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/80 to-obsidian/15" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-obsidian/25" aria-hidden="true" />
 
-        <Reveal delay={0.15} className="flex items-end justify-between border-t border-line pt-6">
-          <span className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted">
-            <ArrowDown size={15} className="text-gold" /> Scroll to explore
-          </span>
-          <a href="#work" className="group flex items-center gap-2 text-sm text-ink transition-colors hover:text-gold-light">
-            View selected work
-            <ArrowUpRight size={16} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.5} />
-          </a>
-        </Reveal>
+        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-6xl flex-col justify-between px-6 py-16 lg:px-8 lg:py-24">
+          <Reveal className="my-auto max-w-4xl py-12">
+            <p className="mb-8 text-xs uppercase tracking-[0.28em] text-gold">IT Intern / Software Engineer Aspirant · Marikina City</p>
+            <h1 className="font-serif text-6xl leading-[0.92] text-ink drop-shadow-2xl sm:text-8xl lg:text-[9rem]">
+              Francine Jace
+              <span className="block text-gold">Bachiller</span>
+            </h1>
+            <p className="mt-10 max-w-xl text-base leading-7 text-muted sm:text-lg">
+              I build practical digital experiences that balance technical rigor, thoughtful design, and real-world problem solving.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.2} className="flex items-end justify-between border-t border-ink/20 pt-6">
+            <span className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted">
+              <ArrowDown size={15} className="text-gold" /> Scroll to explore
+            </span>
+            <a href="#work" className="group/link flex items-center gap-2 text-sm text-ink transition-colors hover:text-gold-light">
+              View selected work
+              <ArrowUpRight size={16} className="transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" strokeWidth={1.5} />
+            </a>
+          </Reveal>
+        </div>
       </section>
 
       <section id="about" className="border-y border-line bg-obsidian-soft/50">
