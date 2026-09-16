@@ -23,9 +23,9 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-6xl flex-col justify-between px-6 py-16 lg:px-8 lg:py-24">
           <Reveal className="my-auto max-w-4xl py-12">
-            <p className="mb-8 text-xs uppercase tracking-[0.28em] text-gold">IT Intern / Software Engineer Aspirant · Marikina City</p>
+            <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold sm:mb-4">Software Engineer Aspirant · Marikina City</p>
             <h1 className="font-serif text-6xl leading-[0.92] text-ink drop-shadow-2xl sm:text-8xl lg:text-[9rem]">
-              Francine Jace
+              Francine <span className="font-normal italic tracking-[-0.02em] text-ink/90">Jace</span>
               <span className="block text-gold">Bachiller</span>
             </h1>
             <p className="mt-10 max-w-xl text-base leading-7 text-muted sm:text-lg">
