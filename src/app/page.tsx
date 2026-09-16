@@ -33,8 +33,8 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <Reveal delay={0.2} className="flex flex-wrap items-end justify-between gap-4 border-t border-ink/20 pt-6">
-            <span className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted">
+          <Reveal delay={0.2} className="flex flex-wrap items-center justify-between gap-4 border-t border-ink/20 pt-4">
+            <span className="flex min-h-11 items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted">
               <ArrowDown size={15} className="text-gold" /> Scroll to explore
             </span>
             <a href="#work" className="group/link flex min-h-11 items-center gap-2 text-sm text-ink transition-colors hover:text-gold-light">
