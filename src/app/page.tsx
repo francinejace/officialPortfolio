@@ -89,8 +89,8 @@ export default function Home() {
           <p className="max-w-xl text-base leading-7 text-muted">
             I&apos;m open to internship opportunities, collaborative projects, and conversations about building useful digital products.
           </p>
-          <a href="mailto:francinejacebachiller@gmail.com" className="flex min-h-11 max-w-full w-fit items-center gap-2 break-all border-b border-gold text-sm text-ink transition-colors hover:text-gold-light">
-            francinejacebachiller@gmail.com <ArrowUpRight size={16} strokeWidth={1.5} />
+          <a href="mailto:fjbachiller16@gmail.com" className="flex min-h-11 max-w-full w-fit items-center gap-2 break-all border-b border-gold text-sm text-ink transition-colors hover:text-gold-light">
+            fjbachiller16@gmail.com <ArrowUpRight size={16} strokeWidth={1.5} />
           </a>
         </div>
       </section>
