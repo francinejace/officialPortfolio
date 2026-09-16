@@ -17,8 +17,20 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "[Name] | Portfolio",
-  description: "A portfolio for [Name].",
+  title: {
+    default: "Francine Jace Bachiller | Software Engineer Portfolio",
+    template: "%s | Francine Jace Bachiller",
+  },
+  description:
+    "Portfolio of Francine Jace Bachiller, an aspiring software engineer focused on thoughtful web and mobile application development.",
+  keywords: [
+    "Francine Jace Bachiller",
+    "software engineer",
+    "web developer",
+    "mobile application developer",
+    "Marikina City",
+  ],
+  authors: [{ name: "Francine Jace Bachiller" }],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

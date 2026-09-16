@@ -70,9 +70,12 @@ export default function Home() {
       <section id="contact" className="border-t border-line">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 py-20 lg:px-8 lg:py-28">
           <p className="text-xs uppercase tracking-[0.28em] text-gold">03 / Contact</p>
-          <h2 className="max-w-3xl font-serif text-5xl leading-none text-ink sm:text-7xl">[A warm invitation to connect]</h2>
-          <a href="mailto:your@email.com" className="flex w-fit items-center gap-2 border-b border-gold pb-2 text-sm text-ink transition-colors hover:text-gold-light">
-            your@email.com <ArrowUpRight size={16} strokeWidth={1.5} />
+          <h2 className="max-w-3xl font-serif text-5xl leading-none text-ink sm:text-7xl">Have a thoughtful project in mind?</h2>
+          <p className="max-w-xl text-base leading-7 text-muted">
+            I&apos;m open to internship opportunities, collaborative projects, and conversations about building useful digital products.
+          </p>
+          <a href="mailto:francinejacebachiller@gmail.com" className="flex w-fit items-center gap-2 border-b border-gold pb-2 text-sm text-ink transition-colors hover:text-gold-light">
+            francinejacebachiller@gmail.com <ArrowUpRight size={16} strokeWidth={1.5} />
           </a>
         </div>
       </section>

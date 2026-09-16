@@ -9,7 +9,6 @@ export type Project = {
   linkLabel?: string;
 };
 
-// These entries are intentionally link-free until the final project details are approved.
 export const projects: Project[] = [
   {
     title: "SolMate: A Web and Mobile Solar-Service Management System with Quotation and ROI Generation for RDY Solar Panel Installation",
