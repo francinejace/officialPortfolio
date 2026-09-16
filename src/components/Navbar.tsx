@@ -1,9 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 
 const links = [
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "Work", href: "/work" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -20,7 +20,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/contact"
             className="hidden items-center gap-1 border-b border-gold pb-1 text-ink transition-colors hover:text-gold-light sm:flex"
           >
             Let&apos;s talk <ArrowUpRight size={14} strokeWidth={1.5} />
