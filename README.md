@@ -14,7 +14,7 @@
 
 <br />
 
-![Repository visits](https://visit-counter.vercel.app/counter.png?page=francinejace/officialPortfolio)
+[![Repository visits](https://hits.sh/github.com/francinejace/officialPortfolio.svg?style=for-the-badge&label=visits)](https://hits.sh/github.com/francinejace/officialPortfolio/)
 
 ---
 
