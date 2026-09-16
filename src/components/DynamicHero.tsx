@@ -120,7 +120,7 @@ export function DynamicHero() {
             </motion.span>
             Scroll to explore
           </span>
-          <a href="#work" className="group/link flex min-h-11 items-center gap-2 text-sm text-ink transition-colors hover:text-gold-light">
+          <a href="#work" className="animated-underline group/link flex min-h-11 items-center gap-2 text-sm text-ink transition-colors hover:text-gold-light">
             View selected work
             <ArrowUpRight size={16} className="transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" strokeWidth={1.5} />
           </a>

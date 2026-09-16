@@ -71,7 +71,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <p className="text-[0.68rem] uppercase tracking-[0.22em] text-gold">
               {project.category}
             </p>
-            <h2 className="mt-4 break-words font-serif text-3xl leading-[1.05] text-ink sm:text-4xl xl:text-5xl">
+            <h2 className="mt-4 break-words font-serif text-3xl leading-[1.05] text-ink transition-transform duration-500 group-hover:translate-x-1.5 group-focus-within:translate-x-1.5 motion-reduce:transform-none sm:text-4xl xl:text-5xl">
               {project.title}
             </h2>
           </div>
@@ -104,7 +104,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`Visit live website for ${project.title} (opens in a new tab)`}
-                      className="inline-flex min-h-11 items-center gap-1 text-ink transition-colors hover:text-gold-light"
+                      className="animated-underline inline-flex min-h-11 items-center gap-1 text-ink transition-colors hover:text-gold-light"
                     >
                       Live website <ArrowUpRight size={14} strokeWidth={1.5} aria-hidden="true" />
                     </a>
@@ -115,7 +115,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`View repository for ${project.title} (opens in a new tab)`}
-                      className="inline-flex min-h-11 items-center gap-1 text-ink transition-colors hover:text-gold-light"
+                      className="animated-underline inline-flex min-h-11 items-center gap-1 text-ink transition-colors hover:text-gold-light"
                     >
                       Repository <ArrowUpRight size={14} strokeWidth={1.5} aria-hidden="true" />
                     </a>

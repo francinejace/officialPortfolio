@@ -45,6 +45,29 @@ a {
   touch-action: manipulation;
 }
 
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  position: absolute;
+  right: 0;
+  bottom: 0.3rem;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: #d4af37;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.animated-underline:hover::after,
+.animated-underline:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
 :focus-visible {
   outline: 2px solid #e5c158;
   outline-offset: 4px;

@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { ContactGrid } from "@/components/ContactGrid";
 import { DynamicHero } from "@/components/DynamicHero";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
@@ -52,16 +53,16 @@ export default function Home() {
       </section>
 
       <section id="contact" className="border-t border-line">
-        <Reveal className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 py-20 lg:px-8 lg:py-28">
+        <div className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-8 lg:py-28">
+        <Reveal className="flex flex-col gap-8">
           <p className="text-xs uppercase tracking-[0.28em] text-gold">03 / Contact</p>
           <h2 className="max-w-3xl font-serif text-5xl leading-none text-ink sm:text-7xl">Have a thoughtful project in mind?</h2>
           <p className="max-w-xl text-base leading-7 text-muted">
             I&apos;m open to internship opportunities, collaborative projects, and conversations about building useful digital products.
           </p>
-          <a href="mailto:fjbachiller16@gmail.com" className="flex min-h-11 max-w-full w-fit items-center gap-2 break-all border-b border-gold text-sm text-ink transition-colors hover:text-gold-light">
-            fjbachiller16@gmail.com <ArrowUpRight size={16} strokeWidth={1.5} />
-          </a>
         </Reveal>
+        <ContactGrid className="mt-10" />
+        </div>
       </section>
     </div>
   );
