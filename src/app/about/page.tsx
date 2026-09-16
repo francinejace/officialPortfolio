@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -14,9 +15,9 @@ export default function AboutPage() {
           <p className="mt-6 max-w-2xl text-base leading-8 text-muted">
             My philosophy is simple: build with intention, communicate clearly, and create products that make real work easier for real people. I value thoughtful design, strong teamwork, and disciplined engineering. To me, good software is not only functional—it is understandable, respectful of the user, and designed to last.
           </p>
-          <a href="/work" className="mt-10 flex w-fit items-center gap-2 border-b border-gold pb-2 text-sm text-ink transition-colors hover:text-gold-light">
+          <Link href="/work" className="mt-10 flex min-h-11 w-fit items-center gap-2 border-b border-gold text-sm text-ink transition-colors hover:text-gold-light">
             Explore selected work <ArrowUpRight size={16} strokeWidth={1.5} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

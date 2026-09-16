@@ -5,8 +5,8 @@ export type Project = {
   category: string;
   year?: string;
   status?: string;
-  href?: string;
-  linkLabel?: string;
+  websiteUrl?: string;
+  repositoryUrl?: string;
 };
 
 export const projects: Project[] = [

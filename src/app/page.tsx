@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 
 export default function Home() {
   return (
-    <main id="top">
+    <div>
       <section className="group relative min-h-[calc(100vh-5rem)] overflow-hidden border-b border-line">
         <Image
           src="/images/francine-hero.png"
@@ -17,7 +17,7 @@ export default function Home() {
           sizes="100vw"
           className="object-cover object-[52%_38%] transition-transform duration-[1400ms] ease-out group-hover:scale-[1.015] motion-reduce:transform-none motion-reduce:transition-none"
         />
-        <div className="pointer-events-none absolute inset-0 bg-obsidian/20" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-0 bg-obsidian/55 lg:bg-obsidian/20" aria-hidden="true" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/80 to-obsidian/15" aria-hidden="true" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-obsidian/25" aria-hidden="true" />
 
@@ -28,16 +28,16 @@ export default function Home() {
               Francine <span className="font-normal italic tracking-[-0.02em] text-ink/90">Jace</span>
               <span className="block text-gold">Bachiller</span>
             </h1>
-            <p className="mt-10 max-w-xl text-base leading-7 text-muted sm:text-lg">
+            <p className="mt-10 max-w-xl text-base leading-7 text-ink/80 sm:text-lg">
               I build practical digital experiences that balance technical rigor, thoughtful design, and real-world problem solving.
             </p>
           </Reveal>
 
-          <Reveal delay={0.2} className="flex items-end justify-between border-t border-ink/20 pt-6">
+          <Reveal delay={0.2} className="flex flex-wrap items-end justify-between gap-4 border-t border-ink/20 pt-6">
             <span className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted">
               <ArrowDown size={15} className="text-gold" /> Scroll to explore
             </span>
-            <a href="#work" className="group/link flex items-center gap-2 text-sm text-ink transition-colors hover:text-gold-light">
+            <a href="#work" className="group/link flex min-h-11 items-center gap-2 text-sm text-ink transition-colors hover:text-gold-light">
               View selected work
               <ArrowUpRight size={16} className="transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" strokeWidth={1.5} />
             </a>
@@ -71,7 +71,7 @@ export default function Home() {
 
         <Link
           href="/work"
-          className="group mt-10 flex w-fit items-center gap-2 border-b border-gold pb-2 text-sm text-ink transition-colors hover:text-gold-light"
+          className="group mt-10 flex min-h-11 w-fit items-center gap-2 border-b border-gold text-sm text-ink transition-colors hover:text-gold-light"
         >
           View all selected work
           <ArrowUpRight
@@ -89,11 +89,11 @@ export default function Home() {
           <p className="max-w-xl text-base leading-7 text-muted">
             I&apos;m open to internship opportunities, collaborative projects, and conversations about building useful digital products.
           </p>
-          <a href="mailto:francinejacebachiller@gmail.com" className="flex w-fit items-center gap-2 border-b border-gold pb-2 text-sm text-ink transition-colors hover:text-gold-light">
+          <a href="mailto:francinejacebachiller@gmail.com" className="flex min-h-11 max-w-full w-fit items-center gap-2 break-all border-b border-gold text-sm text-ink transition-colors hover:text-gold-light">
             francinejacebachiller@gmail.com <ArrowUpRight size={16} strokeWidth={1.5} />
           </a>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

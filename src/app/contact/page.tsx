@@ -8,7 +8,7 @@ export default function ContactPage() {
       <p className="mt-10 max-w-xl text-base leading-8 text-muted">
         I&apos;m open to internship opportunities, collaborative projects, and conversations around software engineering, design, and digital product development.
       </p>
-      <a href="mailto:francinejacebachiller@gmail.com" className="mt-10 flex w-fit items-center gap-2 border-b border-gold pb-2 text-sm text-ink transition-colors hover:text-gold-light">
+      <a href="mailto:francinejacebachiller@gmail.com" className="mt-10 flex min-h-11 max-w-full w-fit items-center gap-2 break-all border-b border-gold text-sm text-ink transition-colors hover:text-gold-light">
         francinejacebachiller@gmail.com <ArrowUpRight size={16} strokeWidth={1.5} />
       </a>
     </section>
