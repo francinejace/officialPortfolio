@@ -1,5 +1,8 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
+import { projects } from "@/data/projects";
 
 export default function Home() {
   return (
@@ -42,11 +45,26 @@ export default function Home() {
       <section id="work" className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-8 lg:py-28">
         <div className="mb-12 flex items-end justify-between border-b border-line pb-5">
           <p className="text-xs uppercase tracking-[0.28em] text-gold">02 / Selected work</p>
-          <span className="hidden text-sm text-muted sm:block">[Project count]</span>
+          <span className="hidden text-sm text-muted sm:block">{projects.length} selected projects</span>
         </div>
-        <div className="grid min-h-48 place-items-center border border-dashed border-line text-sm text-muted">
-          [Project cards will be added here]
+
+        <div className="grid gap-5 lg:grid-cols-2">
+          {projects.slice(0, 2).map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
+          ))}
         </div>
+
+        <Link
+          href="/work"
+          className="group mt-10 flex w-fit items-center gap-2 border-b border-gold pb-2 text-sm text-ink transition-colors hover:text-gold-light"
+        >
+          View all selected work
+          <ArrowUpRight
+            size={16}
+            strokeWidth={1.5}
+            className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+          />
+        </Link>
       </section>
 
       <section id="contact" className="border-t border-line">
