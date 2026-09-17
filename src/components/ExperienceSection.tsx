@@ -22,7 +22,8 @@ export function ExperienceSection() {
                       alt={experience.imageAlt ?? `${experience.role} at ${experience.organization}`}
                       fill
                       sizes="(min-width: 1024px) 50vw, 100vw"
-                      className="object-cover"
+                      className={experience.imageFit === "contain" ? "object-contain" : "object-cover"}
+                      style={{ objectPosition: experience.imagePosition ?? "center" }}
                     />
                   ) : (
                     <div className="absolute inset-0 grid place-items-center" aria-label="Experience image placeholder">
