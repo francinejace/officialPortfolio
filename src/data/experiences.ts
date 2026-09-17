@@ -23,7 +23,7 @@ export const experiences: Experience[] = [
     period: "August 2024 — July 2025",
     image: "/experiences/academics-director.jpg",
     imageAlt: "Francine Jace Bachiller with fellow student leaders at an FEU Tech event",
-    imageFit: "contain",
+    imageFit: "cover",
     imagePosition: "center",
   },
 ];
