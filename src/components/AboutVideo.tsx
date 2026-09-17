@@ -23,7 +23,7 @@ export function AboutVideo() {
         playsInline
         preload="metadata"
         tabIndex={-1}
-        className="size-full object-cover opacity-45 saturate-[0.65] motion-reduce:hidden"
+        className="size-full object-cover object-[center_25%] opacity-45 saturate-[0.65] motion-reduce:hidden"
       >
         <source src="/videos/about.m4v" type="video/mp4" />
       </video>
