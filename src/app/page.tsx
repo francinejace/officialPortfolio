@@ -1,4 +1,5 @@
 import { ContactGrid } from "@/components/ContactGrid";
+import { AboutVideo } from "@/components/AboutVideo";
 import { DynamicHero } from "@/components/DynamicHero";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -10,8 +11,9 @@ export default function Home() {
     <div>
       <DynamicHero />
 
-      <section id="about" className="scroll-mt-20 border-y border-line bg-obsidian-soft/50">
-        <div className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-20 lg:grid-cols-[0.7fr_1.3fr] lg:px-8 lg:py-28">
+      <section id="about" className="relative scroll-mt-20 overflow-hidden border-y border-line bg-obsidian-soft/50">
+        <AboutVideo />
+        <div className="relative z-10 mx-auto grid min-h-[32rem] w-full max-w-6xl content-center gap-8 px-6 py-20 lg:grid-cols-[0.7fr_1.3fr] lg:px-8 lg:py-28">
           <Reveal>
             <p className="text-xs uppercase tracking-[0.28em] text-gold">01 / About</p>
           </Reveal>
