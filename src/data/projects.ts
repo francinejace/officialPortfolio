@@ -34,4 +34,26 @@ export const projects: Project[] = [
     status: "Completed",
     websiteUrl: "https://albanmemorial.onrender.com/",
   },
+  {
+    title: "First Portfolio — IT0043",
+    description:
+      "My first personal portfolio, created during my freshman year for Web Design with Client-Side Scripting. The multipage website brings together an introduction, selected school projects, a business concept, and my early résumé work.",
+    technologies: ["HTML", "CSS", "Responsive Web Design"],
+    category: "Academic Portfolio",
+    image: "/projects/first-portfolio.png",
+    imageAlt: "Homepage of Francine's first portfolio created for IT0043",
+    year: "2024",
+    websiteUrl: "https://francinejace.github.io/WD-Final-Project/",
+  },
+  {
+    title: "Heroes & Cards",
+    description:
+      "A freshman-year front-end exercise exploring character-inspired page layouts alongside static and animated card designs. The project helped develop my early understanding of visual hierarchy, reusable styling, and CSS interaction states.",
+    technologies: ["HTML", "CSS", "CSS Animation"],
+    category: "Frontend Exercise",
+    image: "/projects/heroes-and-cards.png",
+    imageAlt: "Heroes and Cards project homepage featuring the Mochi Mochi character graphic",
+    year: "2024",
+    websiteUrl: "https://francinejace.github.io/WD-Hands-on-2/",
+  },
 ];
