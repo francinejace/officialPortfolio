@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { BrandMark } from "@/components/BrandMark";
 
 const links = [
   { label: "About", href: "/#about", id: "about" },
@@ -32,9 +33,8 @@ export function Navbar() {
   return (
     <header id="top" className="sticky top-0 z-50 border-b border-line/70 bg-obsidian/90 backdrop-blur-xl">
       <div className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/#top" className="inline-flex min-h-11 items-center font-serif text-2xl tracking-wide text-ink" aria-label="Francine Jace Bachiller, back to top">
-          <span className="sm:hidden">FJB</span>
-          <span className="hidden sm:inline">Francine Jace Bachiller</span>
+        <Link href="/#top" className="group/logo inline-flex min-h-11 items-center" aria-label="Francine Jace Bachiller, back to top">
+          <BrandMark />
         </Link>
         <nav aria-label="Primary navigation" className="flex items-center gap-2 text-[0.62rem] text-muted sm:gap-6 sm:text-sm">
           {links.map((link) => (
