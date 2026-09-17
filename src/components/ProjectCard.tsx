@@ -1,9 +1,8 @@
 "use client";
 
-import { motion, useMotionTemplate, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import type { PointerEvent } from "react";
 import type { Project } from "@/data/projects";
 
 type ProjectCardProps = {
@@ -14,23 +13,6 @@ type ProjectCardProps = {
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const shouldReduceMotion = useReducedMotion();
   const hasLinks = project.websiteUrl || project.repositoryUrl;
-  const pointerX = useMotionValue(50);
-  const pointerY = useMotionValue(50);
-  const rotateX = useSpring(useTransform(pointerY, [0, 100], [2.5, -2.5]), { stiffness: 180, damping: 24 });
-  const rotateY = useSpring(useTransform(pointerX, [0, 100], [-2.5, 2.5]), { stiffness: 180, damping: 24 });
-  const sheen = useMotionTemplate`radial-gradient(420px circle at ${pointerX}% ${pointerY}%, rgba(212, 175, 55, 0.13), transparent 62%)`;
-
-  function handlePointerMove(event: PointerEvent<HTMLElement>) {
-    if (shouldReduceMotion || event.pointerType !== "mouse") return;
-    const bounds = event.currentTarget.getBoundingClientRect();
-    pointerX.set(((event.clientX - bounds.left) / bounds.width) * 100);
-    pointerY.set(((event.clientY - bounds.top) / bounds.height) * 100);
-  }
-
-  function resetPointer() {
-    pointerX.set(50);
-    pointerY.set(50);
-  }
 
   return (
     <motion.article
@@ -38,21 +20,12 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: shouldReduceMotion ? 0 : 0.65, delay: shouldReduceMotion ? 0 : index * 0.06, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={shouldReduceMotion ? undefined : { y: -4 }}
-      onPointerMove={handlePointerMove}
-      onPointerLeave={resetPointer}
-      style={shouldReduceMotion ? undefined : { transformPerspective: 1000, rotateX, rotateY }}
-      className="group relative flex h-full flex-col overflow-hidden border border-line bg-obsidian-soft/40 transition-colors duration-300 hover:border-gold/50 focus-within:border-gold/50"
+      className="group relative flex h-full flex-col overflow-hidden border border-line bg-obsidian-soft/40"
     >
-      <motion.div
-        className="pointer-events-none absolute inset-0 z-20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        style={{ background: sheen }}
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-gold transition-transform duration-500 group-hover:scale-x-100 group-focus-within:scale-x-100"
-        aria-hidden="true"
-      />
+      <span className="pointer-events-none absolute inset-x-0 top-0 z-30 h-px origin-left scale-x-0 bg-gold transition-transform duration-500 ease-out group-hover:scale-x-100 group-focus-within:scale-x-100" aria-hidden="true" />
+      <span className="pointer-events-none absolute inset-y-0 right-0 z-30 w-px origin-top scale-y-0 bg-gold transition-transform delay-100 duration-500 ease-out group-hover:scale-y-100 group-focus-within:scale-y-100" aria-hidden="true" />
+      <span className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-px origin-right scale-x-0 bg-gold transition-transform delay-200 duration-500 ease-out group-hover:scale-x-100 group-focus-within:scale-x-100" aria-hidden="true" />
+      <span className="pointer-events-none absolute inset-y-0 left-0 z-30 w-px origin-bottom scale-y-0 bg-gold transition-transform delay-300 duration-500 ease-out group-hover:scale-y-100 group-focus-within:scale-y-100" aria-hidden="true" />
 
       <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-obsidian-soft">
         <Image
@@ -60,9 +33,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           alt={project.imageAlt}
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover object-top transition duration-700 ease-out group-hover:scale-[1.035] group-hover:saturate-[1.08] group-focus-within:scale-[1.035] motion-reduce:transform-none motion-reduce:transition-none"
+          className="object-cover object-top saturate-[0.82] transition-[filter] duration-700 ease-out group-hover:saturate-100 group-focus-within:saturate-100 motion-reduce:transition-none"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian/30 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-30 group-focus-within:opacity-30" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian/40 via-transparent to-gold/5 opacity-90 transition-opacity duration-700 group-hover:opacity-30 group-focus-within:opacity-30" aria-hidden="true" />
       </div>
 
       <div className="flex flex-1 flex-col p-7 sm:p-9">
@@ -71,11 +44,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <p className="text-[0.68rem] uppercase tracking-[0.22em] text-gold">
               {project.category}
             </p>
-            <h2 className="mt-4 break-words font-serif text-3xl leading-[1.05] text-ink transition-transform duration-500 group-hover:translate-x-1.5 group-focus-within:translate-x-1.5 motion-reduce:transform-none sm:text-4xl xl:text-5xl">
+            <h2 className="mt-4 break-words font-serif text-3xl leading-[1.05] text-ink sm:text-4xl xl:text-5xl">
               {project.title}
             </h2>
           </div>
-          <span className="shrink-0 font-serif text-2xl text-muted/60" aria-hidden="true">
+          <span className="shrink-0 font-serif text-2xl text-muted/60 transition-colors duration-500 group-hover:text-gold group-focus-within:text-gold" aria-hidden="true">
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>
