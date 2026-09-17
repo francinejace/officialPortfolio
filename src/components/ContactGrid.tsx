@@ -1,8 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, Facebook, Github, Linkedin, Mail, type LucideIcon } from "lucide-react";
-import { useRef } from "react";
 import { Reveal } from "@/components/Reveal";
 
 type ContactLink = {
@@ -11,7 +9,6 @@ type ContactLink = {
   href: string;
   icon: LucideIcon;
   external?: boolean;
-  splitOnScroll?: boolean;
 };
 
 const contactLinks: ContactLink[] = [
@@ -35,55 +32,22 @@ const contactLinks: ContactLink[] = [
     href: "https://github.com/francinejace",
     icon: Github,
     external: true,
-    splitOnScroll: false,
   },
   {
     label: "Email",
     value: "fjbachiller16@gmail.com",
     href: "mailto:fjbachiller16@gmail.com",
     icon: Mail,
-    splitOnScroll: false,
   },
 ];
 
-function BreakingIcon({ icon: Icon, splitOnScroll = true }: { icon: LucideIcon; splitOnScroll?: boolean }) {
-  const iconRef = useRef<HTMLSpanElement>(null);
-  const shouldReduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: iconRef,
-    offset: ["start end", "end start"],
-  });
-  const topX = useTransform(scrollYProgress, [0, 0.4, 0.62, 1], [-7, 0, 0, 8]);
-  const bottomX = useTransform(scrollYProgress, [0, 0.4, 0.62, 1], [7, 0, 0, -8]);
-  const topRotate = useTransform(scrollYProgress, [0, 0.4, 0.62, 1], [-9, 0, 0, 10]);
-  const bottomRotate = useTransform(scrollYProgress, [0, 0.4, 0.62, 1], [9, 0, 0, -10]);
-
-  if (shouldReduceMotion || !splitOnScroll) {
-    return (
-      <span className="grid size-12 shrink-0 place-items-center border border-line text-gold transition-colors duration-300 group-hover:border-gold/50 group-hover:bg-gold/10 group-focus-visible:border-gold/50 group-focus-visible:bg-gold/10" aria-hidden="true">
-        <Icon size={21} strokeWidth={1.5} />
-      </span>
-    );
-  }
-
+function ContactIcon({ icon: Icon }: { icon: LucideIcon }) {
   return (
     <span
-      ref={iconRef}
-      className="relative grid size-12 shrink-0 place-items-center overflow-hidden border border-line text-gold transition-colors duration-300 group-hover:border-gold/50 group-hover:bg-gold/10 group-focus-visible:border-gold/50 group-focus-visible:bg-gold/10"
+      className="grid size-12 shrink-0 place-items-center border border-line text-gold transition-colors duration-300 group-hover:border-gold/50 group-hover:bg-gold/10 group-focus-visible:border-gold/50 group-focus-visible:bg-gold/10"
       aria-hidden="true"
     >
-      <motion.span
-        className="absolute grid inset-0 place-items-center [clip-path:inset(0_0_50%_0)]"
-        style={{ x: topX, rotate: topRotate }}
-      >
-        <Icon size={21} strokeWidth={1.5} />
-      </motion.span>
-      <motion.span
-        className="absolute grid inset-0 place-items-center [clip-path:inset(50%_0_0_0)]"
-        style={{ x: bottomX, rotate: bottomRotate }}
-      >
-        <Icon size={21} strokeWidth={1.5} />
-      </motion.span>
+      <Icon size={21} strokeWidth={1.5} />
     </span>
   );
 }
@@ -91,7 +55,7 @@ function BreakingIcon({ icon: Icon, splitOnScroll = true }: { icon: LucideIcon; 
 export function ContactGrid({ className = "" }: { className?: string }) {
   return (
     <ul className={`grid gap-4 sm:grid-cols-2 ${className}`} aria-label="Contact methods">
-      {contactLinks.map(({ label, value, href, icon, external, splitOnScroll }, index) => (
+      {contactLinks.map(({ label, value, href, icon, external }, index) => (
         <li key={label}>
           <Reveal delay={0.08 + index * 0.05} className="h-full">
             <a
@@ -102,7 +66,7 @@ export function ContactGrid({ className = "" }: { className?: string }) {
               className="group relative flex min-h-36 h-full items-center gap-5 overflow-hidden border border-line bg-obsidian-soft/40 p-6 transition duration-300 hover:-translate-y-1 hover:border-gold/60 focus-visible:border-gold/60 motion-reduce:transform-none motion-reduce:transition-none sm:p-7"
             >
               <span className="pointer-events-none absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-gold transition-transform duration-500 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100" aria-hidden="true" />
-              <BreakingIcon icon={icon} splitOnScroll={splitOnScroll} />
+              <ContactIcon icon={icon} />
               <span className="min-w-0 flex-1">
                 <span className="block text-[0.68rem] uppercase tracking-[0.22em] text-muted transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transform-none">{label}</span>
                 <span className="mt-2 block break-words text-sm leading-6 text-ink transition-transform duration-500 group-hover:translate-x-2 motion-reduce:transform-none sm:text-base">{value}</span>
